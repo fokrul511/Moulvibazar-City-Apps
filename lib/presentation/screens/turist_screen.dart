@@ -1,6 +1,5 @@
+import 'package:clg_final_projects/presentation/model/turist_data_list.dart';
 import 'package:flutter/material.dart';
-
-import '../model/apps_data.dart';
 import '../widgets/show_ditails_turist_screen.dart';
 
 class TuristScreen extends StatelessWidget {

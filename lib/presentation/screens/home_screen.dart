@@ -1,4 +1,8 @@
 import 'package:clg_final_projects/presentation/screens/hospital_screen.dart';
+import 'package:clg_final_projects/presentation/screens/hotel_scrren.dart';
+import 'package:clg_final_projects/presentation/screens/police_screens.dart';
+import 'package:clg_final_projects/presentation/screens/scl_clg_screen.dart';
+import 'package:clg_final_projects/presentation/screens/team_screen.dart';
 import 'package:clg_final_projects/presentation/screens/turist_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,8 +20,8 @@ List cardimageList = [
   {"image": "assets/images/hospital.png", "title": "hospital"},
   {"image": "assets/images/hotel.png", "title": "hotel"},
   {"image": "assets/images/police.png", "title": "police"},
-  {"image": "assets/images/team.png", "title": "team"},
   {"image": "assets/images/graduation.png", "title": "School\nCollege"},
+  {"image": "assets/images/team.png", "title": "team"},
 ];
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -65,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const TuristScreen(),
+                              builder: (context) => const HotelScreen(),
                             ),
                           );
                           break;
@@ -73,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const TuristScreen(),
+                              builder: (context) => const PoliceStationScreen(),
                             ),
                           );
                           break;
@@ -81,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const TuristScreen(),
+                              builder: (context) => const SchoolCollageScreen(),
                             ),
                           );
                           break;
@@ -89,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const TuristScreen(),
+                              builder: (context) => const TeamScreens(),
                             ),
                           );
                           break;
@@ -106,9 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             cardimageList[index]['image'],
                             width: 70,
                           ),
-                          const SizedBox(
-                            height: 10,
-                          ),
+                          const SizedBox(height: 5),
                           Text(
                             cardimageList[index]["title"],
                             style: const TextStyle(
