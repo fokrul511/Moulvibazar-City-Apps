@@ -6,7 +6,7 @@ class ShowDitailsScreen extends StatelessWidget {
   final String? image;
   final String? visit;
 
-  ShowDitailsScreen(
+  const ShowDitailsScreen(
       {super.key, this.title, this.ditails, this.image, this.visit});
 
   @override

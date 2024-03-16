@@ -27,9 +27,9 @@ class HospitalScreen extends StatelessWidget {
                             ["hospitalNameEng"],
                         hospitalBng: hospitalDataList[index]["hospitalBng"],
                         image: hospitalDataList[index]["image"],
-                        Address: hospitalDataList[index]["Address"],
-                        ContactNumber: hospitalDataList[index]["ContactNumber"],
-                        DitailsofHospital: hospitalDataList[index]["DitailsofHospital"],
+                        address: hospitalDataList[index]["Address"],
+                        contactnumber: hospitalDataList[index]["ContactNumber"],
+                        ditailsofhospital: hospitalDataList[index]["DitailsofHospital"],
                       ),
                     ),
                   );

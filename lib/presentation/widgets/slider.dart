@@ -13,7 +13,7 @@ class SliderScreen extends StatelessWidget {
         enableInfiniteScroll: true,
         enlargeCenterPage: true,
       ),
-      items: sliderImageList
+      items: sliderimageList
           .map(
             (e) => ClipRRect(
               borderRadius: const BorderRadius.all(
@@ -21,8 +21,8 @@ class SliderScreen extends StatelessWidget {
               ),
               child: Stack(
                 children: [
-                  Image.network(
-                    e,
+                  Image(
+                    image: AssetImage(e),
                     fit: BoxFit.cover,
                     width: double.infinity,
                     height: MediaQuery.sizeOf(context).height * 0.30,
@@ -35,5 +35,3 @@ class SliderScreen extends StatelessWidget {
     );
   }
 }
-
-

@@ -4,17 +4,17 @@ class HospitalShowPage extends StatelessWidget {
   final String? hospitalNameEng;
   final String? hospitalBng;
   final String? image;
-  final String? ContactNumber;
-  final String? Address;
-  final String? DitailsofHospital;
+  final String? contactnumber;
+  final String? address;
+  final String? ditailsofhospital;
 
-  HospitalShowPage(
-      {this.hospitalNameEng,
+  const HospitalShowPage(
+      {super.key, this.hospitalNameEng,
       this.hospitalBng,
       this.image,
-      this.ContactNumber,
-      this.Address,
-      this.DitailsofHospital});
+      this.contactnumber,
+      this.address,
+      this.ditailsofhospital});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class HospitalShowPage extends StatelessWidget {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    Address ?? "",
+                    address ?? "",
                     style: const TextStyle(
                       fontSize: 18,
                     ),
@@ -61,7 +61,7 @@ class HospitalShowPage extends StatelessWidget {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    ContactNumber ?? "",
+                    contactnumber ?? "",
                     style: const TextStyle(
                       fontSize: 18,
                     ),
@@ -77,7 +77,7 @@ class HospitalShowPage extends StatelessWidget {
                     height: 5,
                   ),
                   Text(
-                    DitailsofHospital ?? "",
+                    ditailsofhospital ?? "",
                     style: const TextStyle(
                       fontSize: 18,
                     ),

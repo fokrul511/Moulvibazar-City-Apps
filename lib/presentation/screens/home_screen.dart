@@ -17,11 +17,11 @@ class HomeScreen extends StatefulWidget {
 
 List cardimageList = [
   {"image": "assets/images/airplane.png", "title": "Tourist place"},
-  {"image": "assets/images/hospital.png", "title": "hospital"},
-  {"image": "assets/images/hotel.png", "title": "hotel"},
-  {"image": "assets/images/police.png", "title": "police"},
-  {"image": "assets/images/graduation.png", "title": "School\nCollege"},
-  {"image": "assets/images/team.png", "title": "team"},
+  {"image": "assets/images/hospital.png", "title": "Hospital"},
+  {"image": "assets/images/hotel.png", "title": "Hotel"},
+  {"image": "assets/images/police.png", "title": "Police"},
+  {"image": "assets/images/graduation.png", "title": "Academy"},
+  {"image": "assets/images/team.png", "title": "Team"},
 ];
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -29,7 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Welcome To Moulvibazar"),
+        centerTitle: true,
+
+        title: const Text("Welcome To Moulvibazar",),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
