@@ -1,3 +1,5 @@
+import 'package:clg_final_projects/presentation/screens/emergency_screen.dart';
+import 'package:clg_final_projects/presentation/screens/fire_service.dart';
 import 'package:clg_final_projects/presentation/screens/hospital_screen.dart';
 import 'package:clg_final_projects/presentation/screens/hotel_scrren.dart';
 import 'package:clg_final_projects/presentation/screens/police_screens.dart';
@@ -21,6 +23,8 @@ List cardimageList = [
   {"image": "assets/images/hotel.png", "title": "Hotel"},
   {"image": "assets/images/police.png", "title": "Police"},
   {"image": "assets/images/graduation.png", "title": "Academy"},
+  {"image": "assets/images/firefighter.png", "title": "Fire Service"},
+  {"image": "assets/Emergency_image_section/Emergency.png", "title": "Emergency"},
   {"image": "assets/images/team.png", "title": "Team"},
 ];
 
@@ -30,8 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-
-        title: const Text("Welcome To Moulvibazar",),
+        title: const Text(
+          "Welcome To Moulvibazar",
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -92,6 +97,21 @@ class _HomeScreenState extends State<HomeScreen> {
                           );
                           break;
                         case 5:
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const FireService(),
+                            ),
+                          );
+                          break;
+                        case 6:
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const EmergencyScreen(),
+                            ),
+                          );
+                          break; case 7:
                           Navigator.push(
                             context,
                             MaterialPageRoute(

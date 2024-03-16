@@ -14,7 +14,7 @@ class _PoliceStationScreenState extends State<PoliceStationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Moulibazar District Police"), automaticallyImplyLeading: false,),
+      appBar: AppBar(title: const Text("Moulvibazar District Police"), automaticallyImplyLeading: false,),
       body: Column(
         children: [
           Padding(
