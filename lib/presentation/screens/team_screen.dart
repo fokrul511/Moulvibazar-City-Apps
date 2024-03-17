@@ -23,7 +23,7 @@ class TeamScreens extends StatelessWidget {
       },
     ];
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text("Developer Team"),),
       body: ListView.builder(
         itemCount: teamList.length,
         itemBuilder: (context, index) {

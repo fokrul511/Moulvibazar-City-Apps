@@ -16,11 +16,11 @@ class MyApp extends StatelessWidget {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
+            foregroundColor: Colors.white,
             backgroundColor: AppColors.buttonColor,
             padding: const EdgeInsets.symmetric(vertical: 15),
             textStyle: const TextStyle(
               fontSize: 18,
-
             ),
           ),
         ),
