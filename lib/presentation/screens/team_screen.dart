@@ -5,241 +5,60 @@ class TeamScreens extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List teamList = [
+      {
+        "title": "Fokrul Islam",
+        "image": "url",
+        "session": "2019 - 20",
+      },
+      {
+        "title": "Dipon deb",
+        "image": "url",
+        "session": "2020 - 21",
+      },
+      {
+        "title": "Hasan Sojib",
+        "image": "url",
+        "session": "2020 - 21",
+      },
+    ];
     return Scaffold(
       appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 15, right: 15, left: 15),
-              child: Card(
-                elevation: 10,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView.builder(
+        itemCount: teamList.length,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child:  Column(
                   children: [
-                    SizedBox(
-                      width: 150,
-                      height: 250,
-                      child: Image.asset("assets/images/Photo.png",
-                          fit: BoxFit.cover),
+                    CircleAvatar(
+                      minRadius: 80,
                     ),
-                    const SizedBox(
-                      width: 10,
+                    Text(
+                      teamList[index]['title'],
+                      style: TextStyle(fontFamily: "Dancing", fontSize: 40),
                     ),
-                    Column(
-                      children: [
-                        const SizedBox(height: 90),
-                        Container(
-                          height: 170,
-                          width: MediaQuery.sizeOf(context).width * 0.50,
-                          decoration: const BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(10),
-                              topRight: Radius.circular(10),
-                              bottomRight: Radius.circular(10),
-                            ),
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.all(10.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Fokrul Islam",
-                                  style: TextStyle(
-                                      fontFamily: "Dancing",
-                                      fontSize: 35,
-                                      color: Colors.white),
-                                ),
-                                Text(
-                                  "Flutter Apps Developer",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 14),
-                                  textAlign: TextAlign.center,
-                                ),
-                                Text(
-                                  "Computer Scince and Technology",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500),
-                                  textAlign: TextAlign.center,
-                                ),
-                                Text(
-                                  "Moulvibazar Polytechnic Institute",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500),
-                                  textAlign: TextAlign.center,
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 15, right: 15, left: 15),
-              child: Card(
-                elevation: 10,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    const SizedBox(
-                      width: 10,
+                    Text(
+                      "Computer Technology",
+                      style: TextStyle(fontFamily: "Dancing", fontSize: 30),
                     ),
-                    Column(
-                      children: [
-                        const SizedBox(height: 90),
-                        Container(
-                          height: 170,
-                          width: MediaQuery.sizeOf(context).width * 0.50,
-                          decoration: const BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(10),
-                                topRight: Radius.circular(0),
-                                bottomRight: Radius.circular(10),
-                                topLeft: Radius.circular(10)),
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.all(10.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Dipon Deb",
-                                  style: TextStyle(
-                                      fontFamily: "Dancing",
-                                      fontSize: 35,
-                                      color: Colors.white),
-                                ),
-                                Text(
-                                  "Flutter Apps Developer",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 14),
-                                  textAlign: TextAlign.center,
-                                ),
-                                Text(
-                                  "Computer Scince and Technology",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500),
-                                  textAlign: TextAlign.center,
-                                ),
-                                Text(
-                                  "Moulvibazar Polytechnic Institute",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500),
-                                  textAlign: TextAlign.center,
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                      ],
+                    Text(
+                      "Batch(${teamList[index]['session']})",
+                      style: TextStyle(fontFamily: "Dancing", fontSize: 20),
                     ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Image.asset(
-                      "assets/images/dipon.png",
-                      width: 140,
-                      height: 200,
-                      fit: BoxFit.fill,
+                    Text(
+                      "Moulvibazar Polytecninc Institute)",
+                      style: TextStyle(fontFamily: "Dancing", fontSize: 25),
                     ),
                   ],
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Card(
-                elevation: 10,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: 150,
-                      height: 250,
-                      child: Image.asset("assets/images/Photo.png",
-                          fit: BoxFit.cover),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Column(
-                      children: [
-                        const SizedBox(height: 90),
-                        Container(
-                          height: 170,
-                          width: MediaQuery.sizeOf(context).width * 0.50,
-                          decoration: const BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(10),
-                              topRight: Radius.circular(10),
-                              bottomRight: Radius.circular(10),
-                            ),
-                          ),
-                          child: const Padding(
-                            padding: EdgeInsets.all(10.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Hasan Sojib",
-                                  style: TextStyle(
-                                      fontFamily: "Dancing",
-                                      fontSize: 35,
-                                      color: Colors.white),
-                                ),
-                                Text(
-                                  "Flutter Apps Developer",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 14),
-                                  textAlign: TextAlign.center,
-                                ),
-                                Text(
-                                  "Computer Scince and Technology",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500),
-                                  textAlign: TextAlign.center,
-                                ),
-                                Text(
-                                  "Moulvibazar Polytechnic Institute",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500),
-                                  textAlign: TextAlign.center,
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }

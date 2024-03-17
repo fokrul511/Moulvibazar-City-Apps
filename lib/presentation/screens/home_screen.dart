@@ -1,9 +1,9 @@
+import 'package:clg_final_projects/presentation/screens/academy.dart';
 import 'package:clg_final_projects/presentation/screens/emergency_screen.dart';
 import 'package:clg_final_projects/presentation/screens/fire_service.dart';
 import 'package:clg_final_projects/presentation/screens/hospital_screen.dart';
 import 'package:clg_final_projects/presentation/screens/hotel_scrren.dart';
 import 'package:clg_final_projects/presentation/screens/police_screens.dart';
-import 'package:clg_final_projects/presentation/screens/scl_clg_screen.dart';
 import 'package:clg_final_projects/presentation/screens/team_screen.dart';
 import 'package:clg_final_projects/presentation/screens/turist_screen.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const SchoolCollageScreen(),
+                              builder: (context) => const AcademyScreen(),
                             ),
                           );
                           break;
