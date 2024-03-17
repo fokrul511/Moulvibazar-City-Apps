@@ -20,7 +20,7 @@ class ShowDitailsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image(
-              image: NetworkImage(image ?? ""),
+              image:AssetImage (image ?? ""),
               width: double.infinity,
             ),
             Padding(
