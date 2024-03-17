@@ -5,8 +5,11 @@ class HotelScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text("loading......."),),
+    return Scaffold(
+      appBar: AppBar(),
+      body: const Center(
+        child: CircularProgressIndicator(),
+      ),
     );
   }
 }

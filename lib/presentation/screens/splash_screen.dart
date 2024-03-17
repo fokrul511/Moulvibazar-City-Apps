@@ -10,7 +10,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> _moveSinInScreen() async {
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 1));
     if (mounted) {
       Navigator.pushReplacement(
         context,
