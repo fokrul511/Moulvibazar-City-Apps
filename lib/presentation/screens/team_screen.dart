@@ -8,17 +8,17 @@ class TeamScreens extends StatelessWidget {
     List teamList = [
       {
         "title": "Fokrul Islam",
-        "image": "url",
+        "image": "assets/images/Fokrul.jpg",
         "session": "2019 - 20",
       },
       {
         "title": "Dipon deb",
-        "image": "url",
+        "image": "assets/images/dipon.png",
         "session": "2020 - 21",
       },
       {
         "title": "Hasan Sojib",
-        "image": "url",
+        "image": "assets/images/sojib.jpg",
         "session": "2020 - 21",
       },
     ];
@@ -32,24 +32,29 @@ class TeamScreens extends StatelessWidget {
             child: Card(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child:  Column(
+                child: Column(
                   children: [
                     CircleAvatar(
-                      minRadius: 80,
+                      backgroundImage:
+                          AssetImage(teamList[index]["image"] ?? ""),
+                      radius: 80,
+
                     ),
                     Text(
                       teamList[index]['title'],
-                      style: TextStyle(fontFamily: "Dancing", fontSize: 40),
+                      style:
+                          const TextStyle(fontFamily: "Dancing", fontSize: 40),
                     ),
-                    Text(
+                    const Text(
                       "Computer Technology",
                       style: TextStyle(fontFamily: "Dancing", fontSize: 30),
                     ),
                     Text(
                       "Batch(${teamList[index]['session']})",
-                      style: TextStyle(fontFamily: "Dancing", fontSize: 20),
+                      style:
+                          const TextStyle(fontFamily: "Dancing", fontSize: 20),
                     ),
-                    Text(
+                    const Text(
                       "Moulvibazar Polytecninc Institute)",
                       style: TextStyle(fontFamily: "Dancing", fontSize: 25),
                     ),
