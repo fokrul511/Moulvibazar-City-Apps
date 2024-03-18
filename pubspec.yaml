@@ -68,6 +68,7 @@ flutter:
   assets:
     - assets/images/
     - assets/hospital_image/
+    - assets/hotels_image/
     - assets/sliderImage/
     - assets/turistImage/
     - assets/fire_service_image/
