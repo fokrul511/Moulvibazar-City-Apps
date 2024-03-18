@@ -36,7 +36,7 @@ class FireService extends StatelessWidget {
                     log("can't launce this url".toString());
                     }
                   },
-                  child: Row(
+                  child: const Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

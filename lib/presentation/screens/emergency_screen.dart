@@ -1,7 +1,5 @@
 import 'dart:developer';
-
 import 'package:clg_final_projects/presentation/model/emergency_list.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -18,7 +16,7 @@ class EmergencyScreen extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: GridView.builder(
             itemCount: emergencyList.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               mainAxisSpacing: 2,
               crossAxisSpacing: 2,
@@ -72,7 +70,7 @@ class EmergencyScreen extends StatelessWidget {
                                 "Read More",
                                 style: TextStyle(fontSize: 18),
                               )),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           )
                         ],
@@ -110,11 +108,11 @@ class ReadMoreEmeargency extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Center(child: Image.asset(image)),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Padding(
@@ -122,16 +120,16 @@ class ReadMoreEmeargency extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "বিস্তারিত:",
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   ),
                   Text(discription,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18,
                       )),
                   Text("ওয়েব লিংক: $webUrl",
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: Colors.grey,

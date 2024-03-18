@@ -34,7 +34,7 @@ class AcademyShowDataScreen extends StatelessWidget {
           Expanded(
             child: Marquee(
               text:
-              'ভর্তি সংক্রান্ত যেকোনো তথ্যের জন্য পাশে দেয়া নাম্বারে যোগাযোগ করুন। রেজিস্ট্রারঃ $phone',
+              'ভর্তি সংক্রান্ত যেকোনো তথ্যের জন্য পাশে দেয়া নাম্বারে যোগাযোগ করুন। রেজিস্ট্রারঃ $phone ',
               style: const TextStyle(
                 fontSize: 20,
                 color: Colors.green,
