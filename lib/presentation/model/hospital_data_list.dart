@@ -3,7 +3,7 @@ List hospitalDataList = [
     "hospitalNameEng": "Life Line Hospital & Cardiac Center",
     "hospitalBng": "লাইফ লাইন হাসপাতাল এন্ড কার্ডিয়াক সেন্টার",
     "image":
-        "https://archhms.com/hospital/uploads/archProfileImage/header/64b8d340e396a6438.jpg",
+        "assets/hospital_image/1.jpg",
     "ContactNumber": "01707-075394",
     "Address": "Sreemangal Road, Sreemangal, Maulvibazar",
     "DitailsofHospital":
@@ -13,7 +13,7 @@ List hospitalDataList = [
     "hospitalNameEng": "The Royal Pvt. Hospital",
     "hospitalBng": "দি রয়েল প্রাঃ হাসপাতাল",
     "image":
-        "https://archhms.com/hospital/uploads/archProfileImage/header/64c0e4038a1782253.jpg",
+        "assets/hospital_image/2.jpg",
     "ContactNumber": "01719-695032",
     "Address": "Sreemangal Road,Barirpar, Moulvibazar Sadar, Maulvibazar",
     "DitailsofHospital":
@@ -23,7 +23,7 @@ List hospitalDataList = [
     "hospitalNameEng": "Life Care Hospital & Diagnostic Center",
     "hospitalBng": "লাইফ কেয়ার হাসপাতাল এন্ড ডায়াগনস্টিক সেন্টার",
     "image":
-        "https://archhms.com/hospital/uploads/archProfileImage/header/64b7d5c25c6858249.jpg",
+        "assets/hospital_image/3.jpg",
     "ContactNumber": "01743437169",
     "Address": "Sreemangal Road, Ashidron UP, Moulvibazar Sadar, Maulvibazar",
     "DitailsofHospital":
@@ -33,7 +33,7 @@ List hospitalDataList = [
     "hospitalNameEng": "Maa-Moni Pvt. Hospital",
     "hospitalBng": "মা মনি প্রাঃ হাসপাতাল",
     "image":
-        "https://archhms.com/hospital/uploads/archProfileImage/header/64c20dee965e64087.jpg",
+        "assets/hospital_image/4.jpg",
     "ContactNumber": "01757-575353",
     "Address": "Maa Plaza, Sreemangal Road, Moulvibazar Sadar, Maulvibazar",
     "DitailsofHospital":
@@ -43,7 +43,7 @@ List hospitalDataList = [
     "hospitalNameEng": "Moulvibazar BNSB Eye Hospital",
     "hospitalBng": "মৌলভীবাজার বিএনএসবি চক্ষু হাসপাতাল",
     "image":
-        "https://archhms.com/hospital/uploads/archProfileImage/header/64c2151500f218347.jpg",
+        "assets/hospital_image/5.jpg",
     "ContactNumber": "0861-52670",
     "Address": "Shamshernagar Road, Matarkapon, Moulvibazar Sadar, Maulvibazar",
     "DitailsofHospital":
