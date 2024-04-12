@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "571972156725",
+    "project_id": "moulvibazar-city-apps",
+    "storage_bucket": "moulvibazar-city-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571972156725:android:d573ff0cf479cff2b0207c",
+        "android_client_info": {
+          "package_name": "com.example.clg_final_projects"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9XG9Jlz1nsm_oBwlyGPt7z9SfG0HShAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

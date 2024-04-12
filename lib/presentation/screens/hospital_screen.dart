@@ -1,6 +1,8 @@
 import 'package:clg_final_projects/presentation/model/hospital_data_list.dart';
 import 'package:clg_final_projects/presentation/widgets/show_hospital_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HospitalScreen extends StatelessWidget {
   const HospitalScreen({super.key});
@@ -13,43 +15,46 @@ class HospitalScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ListView.builder(
-          itemCount: hospitalDataList.length,
-          itemBuilder: (context, index) {
-            return Card(
-              child: ListTile(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HospitalShowPage(
-                        hospitalNameEng: hospitalDataList[index]
-                            ["hospitalNameEng"],
-                        hospitalBng: hospitalDataList[index]["hospitalBng"],
-                        image: hospitalDataList[index]["image"],
-                        address: hospitalDataList[index]["Address"],
-                        contactnumber: hospitalDataList[index]["ContactNumber"],
-                        ditailsofhospital: hospitalDataList[index]["DitailsofHospital"],
+        child: StreamBuilder(
+            stream:
+                FirebaseFirestore.instance.collection('hospital').snapshots(),
+            builder: (context,
+                AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
+              if (snapshot.hasError) {
+                return Center(
+                  child: Text(snapshot.error.toString()),
+                );
+              }
+
+              return ListView.builder(
+                // itemCount: hospitalDataList.length,
+                itemCount: snapshot.data?.docs.length ?? 0,
+                itemBuilder: (context, index) {
+                  DocumentSnapshot doc = snapshot.data!.docs[index];
+
+                  return Card(
+                    child: ListTile(
+                      onTap: () {
+                        Get.to(()=>HospitalShowPage(docId: doc.id, hospitalNameEng: doc.get('name'),) );
+                      },
+                      title: Text(
+                        doc.get('name'),
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      subtitle: const Text("Moulvibazar"),
+                      trailing: const CircleAvatar(
+                        backgroundImage:
+                            AssetImage("assets/images/medical.png"),
+                        backgroundColor: Colors.transparent,
                       ),
                     ),
                   );
                 },
-                title: Text(
-                  hospitalDataList[index]["hospitalNameEng"] ?? "",
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                subtitle: const Text("Moulvibazar"),
-                trailing: const CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/medical.png"),
-                  backgroundColor: Colors.transparent,
-                ),
-              ),
-            );
-          },
-        ),
+              );
+            }),
       ),
     );
   }

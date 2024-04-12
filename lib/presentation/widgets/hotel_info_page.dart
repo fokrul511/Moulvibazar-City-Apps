@@ -1,13 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class HotelShowScreen extends StatelessWidget {
-  String? title;
-  String? rating;
+  final String? title;
+  final String? rating;
 
   // String? cookTime;
-  String? hotelimage;
+  final String? hotelimage;
 
-  HotelShowScreen({
+  const HotelShowScreen({
     super.key,
     this.title,
     this.hotelimage,
@@ -32,7 +33,7 @@ class HotelShowScreen extends StatelessWidget {
           ),
         ],
         image: DecorationImage(
-          image: AssetImage(
+          image: CachedNetworkImageProvider(
             hotelimage ?? "",
           ),
           fit: BoxFit.cover,
@@ -91,15 +92,18 @@ class HotelShowScreen extends StatelessWidget {
                     color: Colors.black.withOpacity(0.4),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  child: Row(
+                  child: const Row(
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.bookmark_add_outlined,
                         color: Colors.yellow,
                         size: 18,
                       ),
-                      const SizedBox(width: 7),
-                      Text('Explore Now',style: const TextStyle( color: Colors.white),),
+                      SizedBox(width: 7),
+                      Text(
+                        'Explore Now',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ],
                   ),
                 )
