@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HospitalShowPage extends StatelessWidget {
   final String? hospitalNameEng;
@@ -60,11 +63,33 @@ class HospitalShowPage extends StatelessWidget {
                     "Contact:",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  Text(
-                    contactnumber ?? "",
-                    style: const TextStyle(
-                      fontSize: 18,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        contactnumber ?? "",
+                        style: const TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 200,
+                        child: ElevatedButton(
+                            onPressed: () async {
+                              final Uri url = Uri(
+                                scheme: 'tel',
+                                path: contactnumber,
+                              );
+                              if (await canLaunchUrl(url)) {
+                                await launchUrl(url);
+                              } else {
+                                log("can't lounce this url".toString());
+                              }
+                            },
+                        child:Text("Call Now")),
+                      )
+                    ],
                   ),
                   const SizedBox(
                     height: 10,
