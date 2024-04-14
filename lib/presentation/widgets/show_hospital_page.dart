@@ -84,7 +84,7 @@ class HospitalShowPage extends StatelessWidget {
                               if (await canLaunchUrl(url)) {
                                 await launchUrl(url);
                               } else {
-                                log("can't lounce this url".toString());
+                                log("can't lounce this urls".toString());
                               }
                             },
                         child:Text("Call Now")),
