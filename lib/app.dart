@@ -11,9 +11,18 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        // Customize the text theme for the entire app
+        textTheme: TextTheme(
+          displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black),
+          bodyLarge: TextStyle(fontSize: 18, color: Colors.black87),
+          bodyMedium: TextStyle(fontSize: 16, color: Colors.black54),
+
+          // You can add more text styles as needed
+        ),
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.green.shade700,
           foregroundColor: Colors.white,
+          elevation: 0,  // Optional: Add elevation for app bar shadow
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(

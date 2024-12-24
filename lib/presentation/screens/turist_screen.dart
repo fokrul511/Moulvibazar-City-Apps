@@ -1,6 +1,7 @@
 import 'package:clg_final_projects/presentation/model/turist_data_list.dart';
+import 'package:clg_final_projects/presentation/widgets/tourist_details_screen.dart';
 import 'package:flutter/material.dart';
-import '../widgets/show_ditails_turist_screen.dart';
+import 'package:get/get.dart';
 
 class TuristScreen extends StatelessWidget {
   const TuristScreen({super.key});
@@ -14,7 +15,7 @@ class TuristScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView.builder(
-          itemCount: turistList.length,
+          itemCount: touristPlaceDataList.length,
           itemBuilder: (context, index) {
             return Card(
               child: ListTile(
@@ -22,17 +23,22 @@ class TuristScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ShowDitailsScreen(
-                        title: turistList[index]["name"].toString(),
-                        image: turistList[index]["image"].toString(),
-                        visit: turistList[index]["visit"].toString(),
-                        ditails: turistList[index]["ditails"].toString(),
+                      builder: (context) => TouristShowPage(
+                        name: touristPlaceDataList[index]["placeNameEng"].toString(),
+                        namebd: touristPlaceDataList[index]["placeBng"].toString(),
+
+                        image: touristPlaceDataList[index]["image"].toString(),
+                        location: touristPlaceDataList[index]["visit"].toString(),
+                        details: touristPlaceDataList[index]["details"].toString(),
+                        howToGo: touristPlaceDataList[index]["howToGo"].toString(),
+                        visitDetails: touristPlaceDataList[index]["howToGo"].toString(),
+                        locationLink:  touristPlaceDataList[index]["locationMapLink"],
                       ),
                     ),
                   );
                 },
                 title: Text(
-                  turistList[index]["name"].toString(),
+                  touristPlaceDataList[index]["placeBng"].toString(),
                   style: const TextStyle(
                       fontSize: 20, fontWeight: FontWeight.w500),
                 ),

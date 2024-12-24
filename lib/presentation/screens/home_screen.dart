@@ -1,14 +1,15 @@
-import 'package:clg_final_projects/presentation/screens/academy.dart';
 import 'package:clg_final_projects/presentation/screens/emergency_screen.dart';
 import 'package:clg_final_projects/presentation/screens/fire_service.dart';
 import 'package:clg_final_projects/presentation/screens/hospital_screen.dart';
 import 'package:clg_final_projects/presentation/screens/hotel_scrren.dart';
 import 'package:clg_final_projects/presentation/screens/police_screens.dart';
-import 'package:clg_final_projects/presentation/screens/team_screen.dart';
 import 'package:clg_final_projects/presentation/screens/turist_screen.dart';
+import 'package:clg_final_projects/presentation/widgets/drawer.dart';
+import 'package:clg_final_projects/presentation/widgets/notice_board.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/slider.dart';
+import 'academy_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -24,8 +25,10 @@ List cardimageList = [
   {"image": "assets/images/police.png", "title": "Police"},
   {"image": "assets/images/graduation.png", "title": "Academy"},
   {"image": "assets/images/firefighter.png", "title": "Fire Service"},
-  {"image": "assets/Emergency_image_section/Emergency.png", "title": "Emergency"},
-  {"image": "assets/images/team.png", "title": "Team"},
+  {
+    "image": "assets/Emergency_image_section/Emergency.png",
+    "title": "Emergency"
+  },
 ];
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -43,6 +46,10 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             const SliderScreen(),
+            const SizedBox(height: 20),
+            NoticeBoard(
+              noticeText: 'Welcome to Moulvibazar, Developed by Fokrul Islam',
+            ),
             const SizedBox(height: 20),
             Expanded(
               child: GridView.builder(
@@ -111,13 +118,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               builder: (context) => const EmergencyScreen(),
                             ),
                           );
-                          break; case 7:
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const TeamScreens(),
-                            ),
-                          );
                           break;
                         default:
                           break;
@@ -150,6 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+
     );
   }
 }

@@ -3,42 +3,45 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:clg_final_projects/presentation/widgets/expandable_cards.dart';
 
-class HospitalShowPage extends StatefulWidget {
-  final String? hospitalNameEng;
-  final String? docId;
+class TouristShowPage extends StatefulWidget {
+  final String? name;
+  final String? namebd;
   final String? image;
-  final String? hospitalBng;
-  final String? address;
-  final String? contactNumber;
-  final String? detailsOfHospital;
+  final String? location;
+  final String? visitDetails;
+  final String? details;
   final String? howToGo;
-  final double? latitude;
-  final double? longitude;
 
-  const HospitalShowPage({
+  final String? locationLink;
+
+  const TouristShowPage({
     super.key,
-    this.hospitalNameEng,
-    this.docId,
+    this.name,
     this.image,
-    this.hospitalBng,
-    this.address,
-    this.contactNumber,
-    this.detailsOfHospital,
+    this.location,
+    this.visitDetails,
+    this.details,
     this.howToGo,
-    this.latitude,
-    this.longitude,
+    this.namebd,
+    required this.locationLink,
   });
 
   @override
-  State<HospitalShowPage> createState() => _HospitalShowPageState();
+  State<TouristShowPage> createState() => _TouristShowPageState();
 }
 
-class _HospitalShowPageState extends State<HospitalShowPage> {
+class _TouristShowPageState extends State<TouristShowPage> {
+  Future<void> _launchUrl(String url) async {
+    if (!await launchUrl(url as Uri)) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.hospitalNameEng ?? ''),
+        title: Text(widget.name ?? ''),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -70,7 +73,7 @@ class _HospitalShowPageState extends State<HospitalShowPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      widget.hospitalBng ?? '',
+                      widget.namebd ?? '',
                       style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
@@ -78,59 +81,23 @@ class _HospitalShowPageState extends State<HospitalShowPage> {
                     ),
                     const SizedBox(height: 10),
                     const Text(
-                      "Address:",
+                      "Location: ",
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      widget.address ?? '',
+                      widget.location ?? '',
                       style: const TextStyle(fontSize: 18),
                     ),
                     const SizedBox(height: 10),
                     const Text(
-                      "Contact:",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          widget.contactNumber ?? '',
-                          style: const TextStyle(fontSize: 18),
-                        ),
-                        SizedBox(
-                            width: 100,
-                            height: 40,
-                            child: IconButton(
-                              onPressed: () async {
-                                final Uri url = Uri(
-                                  scheme: 'tel',
-                                  path: widget.contactNumber,
-                                );
-                                if (await canLaunchUrl(url)) {
-                                  await launchUrl(url);
-                                } else {
-                                  log("can't launch this url".toString());
-                                }
-                              },
-                              icon: Icon(
-                                Icons.call,
-                                color: Colors.blue,
-                                size: 30,
-                              ),
-                            ))
-                      ],
-                    ),
-                    const SizedBox(height: 10),
-                    const Text(
-                      "প্রতিষ্ঠান সম্পর্কে:",
+                      "About the Place: ",
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      widget.detailsOfHospital ?? '',
+                      widget.details ?? '',
                       style: const TextStyle(fontSize: 18),
                     ),
                     const SizedBox(height: 8),
@@ -138,13 +105,32 @@ class _HospitalShowPageState extends State<HospitalShowPage> {
                       cardMargin: const EdgeInsets.all(0),
                       contentPadding: const EdgeInsets.all(10),
                       avatarText: '',
-                      title: 'কীভাবে যাবেন',
+                      title: 'How to Go',
                       subtitle: '',
-                      expandedContent: Text(
-                        widget.howToGo ?? '',
-                        style: const TextStyle(fontSize: 16),
+                      expandedContent: Column(
+                        children: [
+                          Text(
+                            widget.howToGo ?? '',
+                            style: const TextStyle(fontSize: 18),
+                          ),
+                          const SizedBox(height: 10),
+                          SizedBox(
+                            width: 200,
+                            child: ElevatedButton.icon(
+                              style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5)))),
+                              icon: Icon(Icons.location_on_sharp),
+                              onPressed: () async {
+                                await _launchInAppWithBrowserOptions(
+                                    Uri.parse(widget.locationLink.toString()));
+                              },
+                              label: const Text('View on Map'),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
+
+
                   ],
                 ),
               ),
@@ -153,5 +139,15 @@ class _HospitalShowPageState extends State<HospitalShowPage> {
         ),
       ),
     );
+  }
+
+  Future<void> _launchInAppWithBrowserOptions(Uri url) async {
+    if (!await launchUrl(
+      url,
+      mode: LaunchMode.inAppBrowserView,
+      browserConfiguration: const BrowserConfiguration(showTitle: true),
+    )) {
+      throw Exception('Could not launch $url');
+    }
   }
 }
