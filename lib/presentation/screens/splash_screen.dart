@@ -10,7 +10,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> _moveSinInScreen() async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 5));
     if (mounted) {
       Navigator.pushReplacement(
         context,
@@ -33,6 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Spacer(),
             Image(
               image: AssetImage("assets/images/logo.png"),
               height: 300,
@@ -45,6 +46,10 @@ class _SplashScreenState extends State<SplashScreen> {
                   fontWeight: FontWeight.bold,
                   color: Color(0xff06BC64)),
             ),
+            Spacer(),
+            CircularProgressIndicator(),
+            Spacer(),
+
           ],
         ),
       ),

@@ -12,15 +12,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // Customize the text theme for the entire app
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black),
           bodyLarge: TextStyle(fontSize: 18, color: Colors.black87),
           bodyMedium: TextStyle(fontSize: 16, color: Colors.black54),
 
           // You can add more text styles as needed
         ),
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.green.shade700,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xff00674f),
           foregroundColor: Colors.white,
           elevation: 0,  // Optional: Add elevation for app bar shadow
         ),

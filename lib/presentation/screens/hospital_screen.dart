@@ -1,7 +1,6 @@
 import 'package:clg_final_projects/presentation/model/hospital_data_list.dart';
 import 'package:clg_final_projects/presentation/widgets/card/grocery_card.dart';
 import 'package:clg_final_projects/presentation/widgets/show_hospital_page.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

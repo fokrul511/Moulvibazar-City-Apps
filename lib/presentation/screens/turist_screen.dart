@@ -1,7 +1,6 @@
 import 'package:clg_final_projects/presentation/model/turist_data_list.dart';
 import 'package:clg_final_projects/presentation/widgets/tourist_details_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class TuristScreen extends StatelessWidget {
   const TuristScreen({super.key});

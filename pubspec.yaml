@@ -46,6 +46,14 @@ dependencies:
   marquee_text: ^2.5.0+1
   flutter_map: ^7.0.2
   latlong2: ^0.9.1
+  font_awesome_flutter: ^10.8.0
+  intl: ^0.20.1
+  webview_flutter: ^4.10.0
+  flutter_dotenv: ^5.2.1
+  fl_chart: ^0.69.2
+  lottie: ^3.2.0
+
+
 
 
 dev_dependencies:
@@ -78,6 +86,8 @@ flutter:
     - assets/turistImage/
     - assets/fire_service_image/
     - assets/Emergency_image_section/
+    - assets/academy_image/
+    - assets/animation/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

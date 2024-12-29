@@ -38,18 +38,21 @@ class NoticeBoard extends StatelessWidget {
               color: Colors.blue.shade100,
               borderRadius: BorderRadius.circular(4),
             ),
-            child: MarqueeText(
-              alwaysScroll: true,
-              text: TextSpan(
-                text: noticeText,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.blue.shade900,
+            child: Center(
+              child: MarqueeText(
+                alwaysScroll: true,
+                text: TextSpan(
+                  text: noticeText,
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.blue.shade900,
+                  ),
                 ),
+                speed:30,
+                textDirection: TextDirection.ltr,
+                marqueeDirection: MarqueeDirection.rtl,
+                textAlign: TextAlign.center,
               ),
-              speed: 15,
-              textDirection: TextDirection.ltr,
-              marqueeDirection: MarqueeDirection.rtl,
             ),
           ),
         ),
