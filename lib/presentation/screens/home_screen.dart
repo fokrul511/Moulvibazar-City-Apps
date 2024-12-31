@@ -1,3 +1,5 @@
+import 'package:clg_final_projects/presentation/screens/blood_doner_screen.dart';
+import 'package:clg_final_projects/presentation/screens/news_paper_home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -6,6 +8,7 @@ import 'package:lottie/lottie.dart';
 import '../model/card_lists.dart';
 import '../model/data_list.dart';
 import '../widgets/slider.dart';
+import '../widgets/web_view_widgets.dart';
 import 'academy_screen.dart';
 import 'air_tricket_screen.dart';
 import 'ambulance_service_screen.dart';
@@ -31,9 +34,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String currentMonth = DateFormat('MMMM').format(DateTime.now()); // Full month name
-  String currentDay = DateFormat('dd').format(DateTime.now()); // Day of the month
-  String currentYear = DateFormat('yyyy').format(DateTime.now()); // Current year
+  String currentMonth =
+      DateFormat('MMMM').format(DateTime.now()); // Full month name
+  String currentDay =
+      DateFormat('dd').format(DateTime.now()); // Day of the month
+  String currentYear =
+      DateFormat('yyyy').format(DateTime.now()); // Current year
 
   ///exit function
   DateTime? currentBackPressTime;
@@ -41,12 +47,12 @@ class _HomeScreenState extends State<HomeScreen> {
   bool onWillPop() {
     final now = DateTime.now();
     if (currentBackPressTime == null ||
-        now.difference(currentBackPressTime!) > Duration(seconds: 2)) {
+        now.difference(currentBackPressTime!) > const Duration(seconds: 2)) {
       // Set the current time when the back button is pressed
       currentBackPressTime = now;
       // Show a snack bar or dialog to prompt the user
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Press again to exit')),
+        const SnackBar(content: Text('Press again to exit')),
       );
       return false; // Don't exit the app
     }
@@ -57,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: WillPopScope(
-        onWillPop: () async => onWillPop(),  // Correctly use onWillPop here
+        onWillPop: () async => onWillPop(), // Correctly use onWillPop here
         child: Scaffold(
           appBar: AppBar(
             title: const Text(
@@ -99,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 const SliderScreen(),
                 const SizedBox(height: 16),
-                NoticeBoard(
+                const NoticeBoard(
                   noticeText: noticeText,
                 ),
                 const SizedBox(height: 8),
@@ -116,11 +122,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: GridView.builder(
                     itemCount: cardimageList.length,
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        crossAxisSpacing: 2,
-                        mainAxisSpacing: 2,
-                        childAspectRatio: 19 / 14),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
+                            crossAxisSpacing: 2,
+                            mainAxisSpacing: 2,
+                            childAspectRatio: 19 / 14),
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
@@ -146,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                  const PoliceStationScreen(),
+                                      const PoliceStationScreen(),
                                 ),
                               );
                               break;
@@ -162,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const FireService(),
+                                  builder: (context) => FireService(),
                                 ),
                               );
                               break;
@@ -181,34 +188,56 @@ class _HomeScreenState extends State<HomeScreen> {
                               Get.to(() => const AmbulanceServiceScreen());
                               break;
 
-                          ///Bus Tricet section............
+                            ///Bus Tricet section............
                             case 8:
-                              Get.to(() => BusTricketScreen());
+                              Get.to(() => const BusTricketScreen());
                               break;
 
-                          ///Weather section............
+                            ///Weather section............
                             case 9:
                               Get.to(() => WeatherApp());
                               break;
 
-                          ///Resturent Service section........
+                            ///Resturent Service section........
                             case 10:
-                              Get.to(() => RestranServiceScreen());
+                              Get.to(() => const RestranServiceScreen());
                               break;
 
-                          /// Job Search Service section........
+                            /// Job Search Service section........
                             case 11:
-                              Get.to(() => JobsScreen());
+                              Get.to(() => const JobsScreen());
                               break;
 
-                          /// Train Tricket Service section........
+                            /// Train Tricket Service section........
                             case 12:
-                              Get.to(() => TrainTricketScreen());
+                              Get.to(() => const TrainTricketScreen());
                               break;
 
-                          /// judges Service section........
+                            /// judges Service section........
                             case 13:
-                              Get.to(() => BarAssociationScreen());
+                              Get.to(() => const BarAssociationScreen());
+                              break;
+
+                            /// Blood doner Service section........
+                            case 14:
+                              Get.to(() => const BloodDonorScreen());
+                              break;
+
+                            /// Blood doner Service section........
+                            case 15:
+                              Get.to(() => const NewsPaperHomeScreen());
+                              break;
+
+                            ///
+                            ///  Sports  section........
+                            case 16:
+                              Get.to(
+                                () => const WebViewScreen(
+                                  title: 'লাইভ স্পোর্টস নিউজ',
+                                  url:
+                                      'https://www.espncricinfo.com/live-cricket-score',
+                                ),
+                              );
                               break;
                             default:
                               break;

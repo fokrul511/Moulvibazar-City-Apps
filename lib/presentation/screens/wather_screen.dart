@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:async'; // Import for Timer
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -12,22 +12,22 @@ class _WeatherAppState extends State<WeatherApp> {
   Map<String, dynamic>? weatherData;
   bool isLoading = true;
   bool isError = false;
-  late Timer _timer; // Timer for auto-refresh
+  late Timer _timer;
 
   @override
   void initState() {
     super.initState();
     loadWeather();
 
-    // Set up the auto-refresh every 5 seconds
-    _timer = Timer.periodic(Duration(seconds: 5), (timer) {
+    // Auto-refresh every 5 seconds
+    _timer = Timer.periodic(const Duration(seconds: 5), (timer) {
       loadWeather();
     });
   }
 
   @override
   void dispose() {
-    _timer.cancel(); // Cancel the timer when the widget is disposed
+    _timer.cancel();
     super.dispose();
   }
 
@@ -68,119 +68,206 @@ class _WeatherAppState extends State<WeatherApp> {
 
   @override
   Widget build(BuildContext context) {
-    // Change background color based on temperature
-    Color backgroundColor = Colors.blueAccent;
+    // Gradient background based on temperature
+    Gradient gradientBackground = const LinearGradient(
+      colors: [Colors.blueAccent, Colors.lightBlue],
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+    );
+
     if (weatherData != null) {
-      double temp = (weatherData!['main']['temp'] as num).toDouble(); // Ensure temp is a double
+      double temp = (weatherData!['main']['temp'] as num).toDouble();
       if (temp < 10) {
-        backgroundColor = Colors.blue; // Cold
+        gradientBackground = LinearGradient(
+          colors: [Colors.blue.shade800, Colors.blue.shade400],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        );
       } else if (temp > 30) {
-        backgroundColor = Colors.red; // Hot
+        gradientBackground = LinearGradient(
+          colors: [Colors.red.shade800, Colors.orange.shade400],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        );
       } else {
-        backgroundColor = Colors.white; // Mild
+        gradientBackground = LinearGradient(
+          colors: [Colors.green.shade800, Colors.teal.shade400],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        );
       }
     }
 
     return Scaffold(
-      backgroundColor: backgroundColor, // Set background color
       appBar: AppBar(
-        title: const Text("Moulvibazar Weather"),
-        backgroundColor: Colors.blueAccent,
+        title: const Text("Moulvibazar Area Weather"),
       ),
-      body: isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : isError
-          ? Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              "Failed to load weather. Check your connection.",
-              style: TextStyle(fontSize: 18, color: Colors.red),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: loadWeather,
-              child: const Text("Retry"),
-            ),
-          ],
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: gradientBackground,
         ),
-      )
-          : Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Weather Icon
-              Image.network(
-                'http://openweathermap.org/img/wn/${weatherData!['weather'][0]['icon']}@2x.png',
-                height: 100,
-                width: 100,
-              ),
-              const SizedBox(height: 10),
+        child: isLoading
+            ? const Center(child: CircularProgressIndicator())
+            : isError
+                ? Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Failed to load weather. Check your connection.",
+                          style: TextStyle(fontSize: 18, color: Colors.red),
+                        ),
+                        const SizedBox(height: 10),
+                        ElevatedButton(
+                          onPressed: loadWeather,
+                          style: ElevatedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 25),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          child: const Text("Retry"),
+                        ),
+                      ],
+                    ),
+                  )
+                : Center(
+                    child: SingleChildScrollView(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            // Weather Icon
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.3),
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  const BoxShadow(
+                                    color: Colors.black26,
+                                    blurRadius: 10,
+                                    offset: Offset(0, 5),
+                                  ),
+                                ],
+                              ),
+                              padding: const EdgeInsets.all(20),
+                              child: Image.network(
+                                'http://openweathermap.org/img/wn/${weatherData!['weather'][0]['icon']}@2x.png',
+                                height: 100,
+                                width: 100,
+                              ),
+                            ),
+                            const SizedBox(height: 20),
 
-              // Temperature
-              Text(
-                "Temperature: ${weatherData!['main']['temp']}°C",
-                style: const TextStyle(
-                    fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 5),
+                            // Temperature
+                            Text(
+                              "${weatherData!['main']['temp']}°C",
+                              style: const TextStyle(
+                                fontSize: 60,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(height: 5),
 
-              // Condition
-              Text(
-                "Condition: ${weatherData!['weather'][0]['description']}",
-                style: const TextStyle(fontSize: 18),
-              ),
-              const SizedBox(height: 10),
+                            // Condition
+                            Text(
+                              "${weatherData!['weather'][0]['description'].toUpperCase()}",
+                              style: const TextStyle(
+                                fontSize: 22,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(height: 20),
 
-              // Additional Details
-              Card(
-                elevation: 5,
-                margin: const EdgeInsets.symmetric(vertical: 10),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: [
-                      Text(
-                        "Feels Like: ${weatherData!['main']['feels_like']}°C",
-                        style: const TextStyle(fontSize: 16),
+                            // Additional Details
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.9),
+                                borderRadius: BorderRadius.circular(16),
+                                boxShadow: [
+                                  const BoxShadow(
+                                    color: Colors.black26,
+                                    blurRadius: 10,
+                                    offset: Offset(0, 5),
+                                  ),
+                                ],
+                              ),
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                children: [
+                                  detailRow(
+                                    label: "Feels Like",
+                                    value:
+                                        "${weatherData!['main']['feels_like']}°C",
+                                  ),
+                                  detailRow(
+                                    label: "Humidity",
+                                    value:
+                                        "${weatherData!['main']['humidity']}%",
+                                  ),
+                                  detailRow(
+                                    label: "Wind Speed",
+                                    value:
+                                        "${weatherData!['wind']['speed']} m/s",
+                                  ),
+                                  detailRow(
+                                    label: "Pressure",
+                                    value:
+                                        "${weatherData!['main']['pressure']} hPa",
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(height: 30),
+
+                            // Refresh Button
+                            ElevatedButton(
+                              onPressed: loadWeather,
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 15, horizontal: 50),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                backgroundColor: Colors.white,
+                              ),
+                              child: const Text(
+                                "Refresh",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.blueAccent,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      Text(
-                        "Humidity: ${weatherData!['main']['humidity']}%",
-                        style: const TextStyle(fontSize: 16),
-                      ),
-                      Text(
-                        "Wind Speed: ${weatherData!['wind']['speed']} m/s",
-                        style: const TextStyle(fontSize: 16),
-                      ),
-                      Text(
-                        "Pressure: ${weatherData!['main']['pressure']} hPa",
-                        style: const TextStyle(fontSize: 16),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 100,
-              ),
-              // Refresh Button
-              SizedBox(
-                width: 200,
-                child: ElevatedButton(
-                  onPressed: loadWeather,
-                  child: const Text("Refresh"),
-                ),
-              ),
-            ],
-          ),
-        ),
       ),
     );
-
-
   }
 
+  // Helper Widget for Additional Details
+  Widget detailRow({required String label, required String value}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            label,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          ),
+          Text(
+            value,
+            style: const TextStyle(fontSize: 16),
+          ),
+        ],
+      ),
+    );
+  }
 }

@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../model/ambulance_service_list.dart';
@@ -52,23 +53,24 @@ class AmbulanceServiceScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(phone,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
-                CircleAvatar(
-                  radius: 25,
-                  child: IconButton(
-                    onPressed: ()async {
-                      final Uri url = Uri(
-                        scheme: 'tel',
-                        path: phone,
-                      );
-                      if (await canLaunchUrl(url)) {
+                GestureDetector(
+                  onTap: () async {
+                    final Uri url = Uri(
+                      scheme: 'tel',
+                      path: phone,
+                    );
+                    if (await canLaunchUrl(url)) {
                       await launchUrl(url);
-                      } else {
+                    } else {
                       log("can't lounce this url".toString());
-                      }
-                    },
-                    icon: const Icon(Icons.call,size: 30,color: Colors.teal,),
+                    }
+                  },
+                  child: Lottie.asset(
+                    height: 60,
+                    width: 60,
+                    "assets/animation/call - 1735628209117.json",
                   ),
-                )
+                ),
               ],
             )
           ],

@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:clg_final_projects/presentation/model/emergency_list.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class EmergencyScreen extends StatelessWidget {
@@ -23,7 +24,7 @@ class EmergencyScreen extends StatelessWidget {
             ),
             itemBuilder: (context, index) {
               return Card(
-                elevation: 5,
+                elevation: 3,
                 child: Column(
                   children: [
                     Expanded(
@@ -31,28 +32,30 @@ class EmergencyScreen extends StatelessWidget {
                       child: Image.asset(emergencyList[index]["Image"]),
                     ),
                     Expanded(
-                      child: Row(
-                        children: [
-                          IconButton(
-                            onPressed: () async {
-                              final Uri url = Uri(
-                                scheme: 'tel',
-                                path: emergencyList[index]["phone"],
-                              );
-                              if (await canLaunchUrl(url)) {
-                                await launchUrl(url);
-                              } else {
-                                log("can't lounce this url".toString());
-                              }
-                            },
-                            icon: const Icon(
-                              Icons.call,
-                              size: 40,
-                              color: Colors.green,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () async {
+                                final Uri url = Uri(
+                                  scheme: 'tel',
+                                  path: emergencyList[index]["phone"],
+                                );
+                                if (await canLaunchUrl(url)) {
+                                  await launchUrl(url);
+                                } else {
+                                  log("can't lounce this url".toString());
+                                }
+                              },
+                              child: Lottie.asset(
+                                height: 60,
+                                width: 60,
+                                "assets/animation/call - 1735628209117.json",
+                              ),
                             ),
-                          ),
-                          const Spacer(),
-                          GestureDetector(
+                            const Spacer(),
+                            GestureDetector(
                               onTap: () {
                                 Navigator.push(
                                   context,
@@ -68,12 +71,12 @@ class EmergencyScreen extends StatelessWidget {
                               },
                               child: const Text(
                                 "Read More",
-                                style: TextStyle(fontSize: 18),
-                              )),
-                          const SizedBox(
-                            width: 10,
-                          )
-                        ],
+                                style:
+                                    TextStyle(fontSize: 18, color: Colors.blue),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],

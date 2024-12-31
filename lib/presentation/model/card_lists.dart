@@ -60,16 +60,23 @@ List cardimageList = [
     "image": "assets/animation/Animation - 1735417953671.json",
     "title": "আইনজীবী"
   },
+  {
+    "image": "assets/animation/Animation - 1735626037992.json",
+    "title": "ব্লাড ডোনার"
+  },
+  {
+    "image": "assets/animation/Animation - 1735627417352.json",
+    "title": "নিউজ পত্রিকা"
+  }, {
+    "image": "assets/animation/sport- 1735641907196.json",
+    "title": "খেলাধুলা"
+  },
   // {
   //   "image":
   //       "https://drive.google.com/uc?export=view&id=1sycfr-uRlv9SRxN5N2X0sFhafwdJlVbK",
   //   "title": "ব্যাংক"
   // },
-  // {
-  //   "image":
-  //       "https://drive.google.com/uc?export=view&id=1jTl4wZBxe3BKyhq-RW_h-GAnVZf_JDGu",
-  //   "title": "ব্লাড ডোনার"
-  // },
+
   // {
   //   "image":
   //       "https://drive.google.com/uc?export=view&id=1itYHSGGcvHhZCt86La39iU-XPYAJ95lI",

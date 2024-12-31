@@ -1,5 +1,6 @@
 import 'package:clg_final_projects/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,36 +21,40 @@ class _SplashScreenState extends State<SplashScreen> {
       );
     }
   }
-@override
+
+  @override
   void initState() {
     super.initState();
     _moveSinInScreen();
   }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(),
-            Image(
+            const Spacer(),
+            const Image(
               image: AssetImage("assets/images/logo.png"),
               height: 300,
               width: 300,
             ),
-            Text(
-              "Moulvibazar City",
+            const Text(
+              "Moulvibazar E-Sheba",
               style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: Color(0xff06BC64)),
             ),
-            Spacer(),
-            CircularProgressIndicator(),
-            Spacer(),
-
+            const Spacer(),
+            Lottie.asset(
+                height: 250,
+                width: 250,
+                "assets/animation/Animation - 1735626510638.json"),
+            const Spacer(),
           ],
         ),
       ),

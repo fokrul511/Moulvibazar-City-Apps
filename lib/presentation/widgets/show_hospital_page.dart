@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:clg_final_projects/presentation/widgets/expandable_cards.dart';
 
@@ -99,27 +100,24 @@ class _HospitalShowPageState extends State<HospitalShowPage> {
                           widget.contactNumber ?? '',
                           style: const TextStyle(fontSize: 18),
                         ),
-                        SizedBox(
-                            width: 100,
-                            height: 40,
-                            child: IconButton(
-                              onPressed: () async {
-                                final Uri url = Uri(
-                                  scheme: 'tel',
-                                  path: widget.contactNumber,
-                                );
-                                if (await canLaunchUrl(url)) {
-                                  await launchUrl(url);
-                                } else {
-                                  log("can't launch this url".toString());
-                                }
-                              },
-                              icon: Icon(
-                                Icons.call,
-                                color: Colors.blue,
-                                size: 30,
-                              ),
-                            ))
+                        GestureDetector(
+                          onTap: ()async {
+                            final Uri url = Uri(
+                              scheme: 'tel',
+                              path: widget.contactNumber,
+                            );
+                            if (await canLaunchUrl(url)) {
+                              await launchUrl(url);
+                            } else {
+                              log("can't launch this url".toString());
+                            }
+                          },
+                          child: Lottie.asset(
+                            height: 60,
+                            width: 60,
+                            "assets/animation/call - 1735628209117.json",
+                          ),
+                        )
                       ],
                     ),
                     const SizedBox(height: 10),
