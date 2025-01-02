@@ -30,11 +30,6 @@ class TouristShowPage extends StatefulWidget {
 }
 
 class _TouristShowPageState extends State<TouristShowPage> {
-  Future<void> _launchUrl(String url) async {
-    if (!await launchUrl(url as Uri)) {
-      throw Exception('Could not launch $url');
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -116,8 +111,8 @@ class _TouristShowPageState extends State<TouristShowPage> {
                           SizedBox(
                             width: 200,
                             child: ElevatedButton.icon(
-                              style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5)))),
-                              icon: Icon(Icons.location_on_sharp),
+                              style: ElevatedButton.styleFrom(shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5)))),
+                              icon: const Icon(Icons.location_on_sharp),
                               onPressed: () async {
                                 await _launchInAppWithBrowserOptions(
                                     Uri.parse(widget.locationLink.toString()));

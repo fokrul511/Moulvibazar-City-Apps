@@ -29,11 +29,6 @@ class AcademyShowDataScreen extends StatelessWidget {
     required this.campusFacilities,
   }) : super(key: key);
 
-  Future<void> _launchUrl(String url) async {
-    if (!await launchUrl(Uri.parse(url))) {
-      throw Exception('Could not launch $url');
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +109,7 @@ class AcademyShowDataScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 20),
                         ExpandableCard(
-                          cardMargin: EdgeInsets.all(0),
+                          cardMargin: const EdgeInsets.all(0),
                           title: 'কীভাবে যাবেন',
                           expandedContent: Column(
                             children: [
@@ -140,17 +135,17 @@ class AcademyShowDataScreen extends StatelessWidget {
                           subtitle: '',
                         ),
                         const SizedBox(height: 20),
-                        Text(
+                        const Text(
                           "Courses Offered",
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Divider(),
+                        const Divider(),
                         ListView.builder(
                           shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           itemCount: coursesOffered.length,
                           itemBuilder: (context, index) {
                             return ListTile(
@@ -162,18 +157,18 @@ class AcademyShowDataScreen extends StatelessWidget {
                           },
                         ),
                         const SizedBox(height: 10),
-                        Text(
+                        const Text(
                           "Campus Facilities",
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Divider(),
+                        const Divider(),
 
                         ListView.builder(
                           shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           itemCount: campusFacilities.length,
                           itemBuilder: (context, index) {
                             return ListTile(

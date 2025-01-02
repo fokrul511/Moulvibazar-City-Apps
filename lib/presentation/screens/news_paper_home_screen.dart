@@ -15,9 +15,9 @@ class NewsPaperHomeScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: const ClipRRect(
+          const Padding(
+            padding: EdgeInsets.all(16.0),
+            child: ClipRRect(
 
               borderRadius: BorderRadius.all(Radius.circular(10)),
               child: Image(
@@ -31,7 +31,7 @@ class NewsPaperHomeScreen extends StatelessWidget {
           GradientTextContainer(
             title: "জাতীয় সকল পত্রিকা",
             onTap: () {
-              Get.to(() => NewsUI());
+              Get.to(() => const NewsUI());
               print("জাতীয় সকল পত্রিকা tapped!");
             },
           ),
@@ -50,7 +50,7 @@ class NewsPaperHomeScreen extends StatelessWidget {
                 textColor: Colors.white,
                 actionColor: Colors.yellow,
                 behavior: SnackBarBehavior.floating,
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
               );
 
               print("সিলেট বিভাগের সকল পত্রিকা tapped!");
@@ -59,7 +59,7 @@ class NewsPaperHomeScreen extends StatelessWidget {
           GradientTextContainer(
             title: "মৌলভীবাজার জেলার সকল পত্রিকা",
             onTap: () {
-              Get.to(() => MoulvibazarNews());
+              Get.to(() => const MoulvibazarNews());
               print("মৌলভীবাজার জেলার সকল পত্রিকা tapped!");
             },
           ),

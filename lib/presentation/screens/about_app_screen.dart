@@ -7,14 +7,14 @@ class AppInfoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('মৌলভীবাজার ই-সেবা'),
+        title: const Text('মৌলভীবাজার ই-সেবা'),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'আসসালামু আলাইকুম প্রিয় মৌলভীবাজারবাসী,',
               style: TextStyle(
                 fontSize: 22,
@@ -22,39 +22,39 @@ class AppInfoScreen extends StatelessWidget {
                 color: Colors.blueAccent,
               ),
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'আপনাদের জীবনকে আরও সহজ এবং উন্নত করতে আমরা নিয়ে এসেছি '
                   '"মৌলভীবাজার ই-সেবা" অ্যাপটি।',
               style: TextStyle(fontSize: 18),
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'এই অ্যাপটি আপনাকে সরবরাহ করবে আপনার জেলা সম্পর্কিত সকল অনলাইন সেবা। '
                   '"মৌলভীবাজার ই-সেবা" অ্যাপটি ব্যবহার করে আপনি পাবেন:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             _buildListItem('সরকারি এবং বেসরকারি সেবা এক জায়গায়'),
             _buildListItem('জরুরি তথ্য হাতের মুঠোয়'),
             _buildListItem('অফলাইন ব্যবহারের সুবিধা যখনই প্রয়োজন'),
             _buildListItem('আপডেটেড সেবা তথ্য'),
             _buildListItem('সহজ এবং দ্রুত সেবা গ্রহণের সুযোগ'),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'এই অ্যাপটি আপনাকে সুবিধা প্রদান করবে:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             _buildListItem('শিক্ষা, স্বাস্থ্য, আইনগত সেবা সহ গুরুত্বপূর্ণ তথ্য'),
             _buildListItem('হেল্পলাইন এবং প্রয়োজনীয় যোগাযোগের তথ্য'),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'অ্যাপটি অনলাইন এবং অফলাইন উভয় মোডে ব্যবহারযোগ্য, যা আপনাকে সেবা গ্রহণে সহজতা এবং দ্রুততার সুবিধা প্রদান করবে।',
               style: TextStyle(fontSize: 18),
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'এখনই ডাউনলোড করুন এবং আপনার দৈনন্দিন জীবনকে আরও সহজ এবং উন্নত করুন!',
               style: TextStyle(
                 fontSize: 18,
@@ -73,12 +73,12 @@ class AppInfoScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 5.0),
       child: Row(
         children: [
-          Icon(Icons.check_circle, color: Colors.green, size: 20),
-          SizedBox(width: 10),
+          const Icon(Icons.check_circle, color: Colors.green, size: 20),
+          const SizedBox(width: 10),
           Expanded(
             child: Text(
               text,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
           ),
         ],

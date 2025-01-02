@@ -86,7 +86,7 @@ class ECommerceCardFour extends StatelessWidget {
                               // Set color for star icon
                               Text(
                                 ' ${rating.toString()}',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),

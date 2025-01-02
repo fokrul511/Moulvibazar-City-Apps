@@ -1,9 +1,12 @@
 import 'dart:convert';
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class WeatherApp extends StatefulWidget {
+  const WeatherApp({super.key});
+
   @override
   _WeatherAppState createState() => _WeatherAppState();
 }
@@ -44,7 +47,9 @@ class _WeatherAppState extends State<WeatherApp> {
         isLoading = false;
       });
     } catch (e) {
-      print("Error fetching weather: $e");
+      if (kDebugMode) {
+        print("Error fetching weather: $e");
+      }
       setState(() {
         isError = true;
         isLoading = false;
@@ -144,8 +149,8 @@ class _WeatherAppState extends State<WeatherApp> {
                               decoration: BoxDecoration(
                                 color: Colors.white.withOpacity(0.3),
                                 shape: BoxShape.circle,
-                                boxShadow: [
-                                  const BoxShadow(
+                                boxShadow: const [
+                                  BoxShadow(
                                     color: Colors.black26,
                                     blurRadius: 10,
                                     offset: Offset(0, 5),
@@ -187,8 +192,8 @@ class _WeatherAppState extends State<WeatherApp> {
                               decoration: BoxDecoration(
                                 color: Colors.white.withOpacity(0.9),
                                 borderRadius: BorderRadius.circular(16),
-                                boxShadow: [
-                                  const BoxShadow(
+                                boxShadow: const [
+                                  BoxShadow(
                                     color: Colors.black26,
                                     blurRadius: 10,
                                     offset: Offset(0, 5),

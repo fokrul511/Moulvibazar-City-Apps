@@ -36,11 +36,11 @@ class ProductCard extends StatelessWidget {
         children: [
           Container(
             width: width ?? 350, // Adjust as needed
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(16),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black12,
                   blurRadius: 8,
@@ -61,7 +61,7 @@ class ProductCard extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
                 // Product Details Column
                 Expanded(
                   child: Column(
@@ -70,17 +70,17 @@ class ProductCard extends StatelessWidget {
                       // Product Name
                       Text(
                         productName,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),
                       ),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
                       // Rating and Reviews
                       Row(
                         children: [
-                          Icon(Icons.star, color: Colors.amber, size: 16),
-                          SizedBox(width: 4),
+                          const Icon(Icons.star, color: Colors.amber, size: 16),
+                          const SizedBox(width: 4),
                           Text(
                             rating.toStringAsFixed(1),
                             style: TextStyle(
@@ -88,24 +88,24 @@ class ProductCard extends StatelessWidget {
                               color: Colors.grey[800],
                             ),
                           ),
-                          SizedBox(width: 4),
+                          const SizedBox(width: 4),
                           Text(
                             '($reviewCount reviews)',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 12,
                               color: Colors.grey,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       // Price and Favorite Icon
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             '\$${price.toStringAsFixed(2)}',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 18,
                               color: Colors.orange,
                               fontWeight: FontWeight.bold,
@@ -134,14 +134,14 @@ class ProductCard extends StatelessWidget {
               top: -10, // Adjust to position above the card
               right: 8, // Adjust to position to the right of the card
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
                   color: Colors.green[800],
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
                   discountText,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 12,
                   ),

@@ -67,13 +67,13 @@ class _TeamState extends State<Team> {
                 style: TextStyle(fontSize: 18.0, color: Colors.white70),
               ),
               const SizedBox(height: 20.0),
-              Card(
-                margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              const Card(
+                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                 elevation: 5.0,
                 child: Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: EdgeInsets.all(15.0),
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Specialization:',
                         style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
@@ -87,13 +87,13 @@ class _TeamState extends State<Team> {
                   ),
                 ),
               ),
-              Card(
-                margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              const Card(
+                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                 elevation: 5.0,
                 child: Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: EdgeInsets.all(15.0),
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Contact:',
                         style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),

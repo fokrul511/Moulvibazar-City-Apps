@@ -1,4 +1,4 @@
-const ambulance_service_list = [
+const ambulanceservicelist = [
   {
     "name": "কেয়ার অ্যাম্বুলেন্স",
     "contactNumber": "01711366869",

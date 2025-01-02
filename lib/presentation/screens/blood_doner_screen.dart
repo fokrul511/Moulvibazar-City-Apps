@@ -1,9 +1,6 @@
-import 'dart:developer';
 
 import 'package:clg_final_projects/presentation/widgets/blood_doner_card_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../model/blood_doner_list.dart';
 
@@ -14,7 +11,7 @@ class BloodDonorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('মৌলভীবাজার রক্ত দাতা তালিকা'),
+        title: const Text('মৌলভীবাজার রক্ত দাতা তালিকা'),
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
@@ -22,8 +19,8 @@ class BloodDonorScreen extends StatelessWidget {
           Container(
             width: double.infinity,
             color: Colors.red,
-            padding: EdgeInsets.symmetric(vertical: 10),
-            child: Text(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: const Text(
               'মৌলভীবাজার জেলা রক্ত দাতাদের তালিকা',
               textAlign: TextAlign.center,
               style: TextStyle(

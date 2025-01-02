@@ -10,7 +10,7 @@ class BloodDonorCard extends StatelessWidget {
   final String location;
   final String phone;
 
-  BloodDonorCard({
+  const BloodDonorCard({
     super.key,
     required this.name,
     required this.bloodGroup,
@@ -21,13 +21,13 @@ class BloodDonorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -37,17 +37,17 @@ class BloodDonorCard extends StatelessWidget {
                 color: Colors.redAccent,
                 borderRadius: BorderRadius.circular(8),
               ),
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Text(
                 bloodGroup,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
 
             // Donor Details
             Expanded(
@@ -56,21 +56,21 @@ class BloodDonorCard extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Row(
                     children: [
-                      Icon(Icons.location_on, size: 20, color: Colors.redAccent),
-                      SizedBox(width: 6),
+                      const Icon(Icons.location_on, size: 20, color: Colors.redAccent),
+                      const SizedBox(width: 6),
                       Expanded(
                         child: Text(
                           location,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 14,
                             color: Colors.black54,
                           ),
@@ -78,14 +78,14 @@ class BloodDonorCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Row(
                     children: [
-                      Icon(Icons.phone, size: 20, color: Colors.green),
-                      SizedBox(width: 6),
+                      const Icon(Icons.phone, size: 20, color: Colors.green),
+                      const SizedBox(width: 6),
                       Text(
                         phone,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           color: Colors.black87,
                         ),

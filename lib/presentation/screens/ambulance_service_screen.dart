@@ -20,13 +20,13 @@ class AmbulanceServiceScreen extends StatelessWidget {
         child: ListView.separated(
           itemBuilder: (context, index) {
             return ambulaceCard(
-              name: ambulance_service_list[index]['name'].toString(),
-              address: ambulance_service_list[index]['location'].toString(),
-              phone: ambulance_service_list[index]['contactNumber'].toString(),
+              name: ambulanceservicelist[index]['name'].toString(),
+              address: ambulanceservicelist[index]['location'].toString(),
+              phone: ambulanceservicelist[index]['contactNumber'].toString(),
             );
           },
           separatorBuilder: (context, index) => const Divider(),
-          itemCount: ambulance_service_list.length,
+          itemCount: ambulanceservicelist.length,
         ),
       ),
     );

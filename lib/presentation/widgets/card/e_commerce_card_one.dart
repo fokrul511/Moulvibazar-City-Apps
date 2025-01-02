@@ -106,8 +106,8 @@ class ECommerceCardOne extends StatelessWidget {
                       color: Colors.grey[800],
                     ),
                     ElevatedButton(
-                      child: Text('Details'),
                       onPressed: onDetailsTap,
+                      child: const Text('Details'),
                     ),
                   ],
                 ),

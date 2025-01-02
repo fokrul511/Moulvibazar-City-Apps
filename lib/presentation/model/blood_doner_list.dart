@@ -1,6 +1,5 @@
 import 'package:clg_final_projects/presentation/widgets/blood_doner_widgets.dart';
 
-import '../screens/blood_doner_screen.dart';
 
 final List<BloodDonor> bloodDonors = [
   BloodDonor(

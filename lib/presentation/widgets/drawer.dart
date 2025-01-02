@@ -13,12 +13,12 @@ class BasicDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color(0xff00674f),
+        color: const Color(0xff00674f),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Drawer Header
-            DrawerHeader(
+            const DrawerHeader(
               child: Row(
                 children: [
                   CircleAvatar(
@@ -55,7 +55,7 @@ class BasicDrawer extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
-                  ListTile(
+                  const ListTile(
                     title: Text(
                       "Task",
                       style: TextStyle(fontSize: 20, color: Colors.white60),
@@ -66,7 +66,7 @@ class BasicDrawer extends StatelessWidget {
                     title: "About Developer",
                     icon: Icons.account_box_outlined,
                     onTap: () {
-                      Get.to(() => Team());
+                      Get.to(() => const Team());
                     },
                   ),
                   _buildDrawerItem(
@@ -74,7 +74,7 @@ class BasicDrawer extends StatelessWidget {
                     title: "About App",
                     icon: Icons.phone_android,
                     onTap: () {
-                      Get.to(() => AppInfoScreen());
+                      Get.to(() => const AppInfoScreen());
                     },
                   ),
                   _buildDrawerItem(
@@ -93,13 +93,13 @@ class BasicDrawer extends StatelessWidget {
                       // Handle Help navigation
                     },
                   ),
-                  ListTile(
+                  const ListTile(
                     title: Text(
                       "More",
                       style: TextStyle(fontSize: 20, color: Colors.white60),
                     ),
                   ),
-                  Divider(),
+                  const Divider(),
                   _buildDrawerItem(
                     context,
                     title: "Shere App",
@@ -117,22 +117,22 @@ class BasicDrawer extends StatelessWidget {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text('Exit App'),
-                            content: Text('Do you want to exit the app?'),
+                            title: const Text('Exit App'),
+                            content: const Text('Do you want to exit the app?'),
                             actions: <Widget>[
                               TextButton(
                                 onPressed: () {
                                   // Close the dialog
                                   Navigator.of(context).pop();
                                 },
-                                child: Text('Cancel'),
+                                child: const Text('Cancel'),
                               ),
                               TextButton(
                                 onPressed: () {
                                   // Exit the app
                                   SystemNavigator.pop();
                                 },
-                                child: Text('Exit'),
+                                child: const Text('Exit'),
                               ),
                             ],
                           );
@@ -157,7 +157,7 @@ class BasicDrawer extends StatelessWidget {
       leading: Icon(icon, color: Colors.white),
       title: Text(
         title,
-        style: TextStyle(color: Colors.white),
+        style: const TextStyle(color: Colors.white),
       ),
       onTap: onTap,
     );

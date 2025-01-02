@@ -58,7 +58,7 @@ class GroceryCard extends StatelessWidget {
                       const SizedBox(height: 2),
                       // Replaced with sized box for better readability
                       Text(
-                        '$time',
+                        time,
                         style: TextStyle(
                           fontSize: 16,
                           color: timeColor ?? Colors.red[700],

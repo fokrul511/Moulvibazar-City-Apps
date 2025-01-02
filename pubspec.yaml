@@ -50,8 +50,9 @@ dependencies:
   intl: ^0.20.1
   webview_flutter: ^4.10.0
   flutter_dotenv: ^5.2.1
-  fl_chart: ^0.69.2
   lottie: ^3.2.0
+  flutter_svg: ^2.0.16
+  connectivity_plus: ^6.1.1
 
 
 
@@ -84,11 +85,11 @@ flutter:
     - assets/hospital_image/
     - assets/sliderImage/
     - assets/turistImage/
-    - assets/fire_service_image/
     - assets/Emergency_image_section/
     - assets/academy_image/
     - assets/animation/
     - assets/news/
+    - assets/icons/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

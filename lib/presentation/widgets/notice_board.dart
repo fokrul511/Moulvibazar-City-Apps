@@ -19,7 +19,7 @@ class NoticeBoard extends StatelessWidget {
             color: Colors.blue.shade700,
             borderRadius: BorderRadius.circular(4),
           ),
-          child: Center(
+          child: const Center(
             child: Text(
               'নোটিশ:',
               style: TextStyle(

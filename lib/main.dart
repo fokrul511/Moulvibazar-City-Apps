@@ -1,4 +1,5 @@
  import 'package:clg_final_projects/app.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -8,7 +9,9 @@ void main() async {
   try {
     await dotenv.load(fileName: ".env");
   } catch (e) {
-    print("Could not load .env file: $e");
+    if (kDebugMode) {
+      print("");
+    }
   }
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

@@ -1,74 +1,74 @@
 List cardimageList = [
   {
-    "image": "assets/animation/Animation - 1735413550260.json",
+    "image": "assets/icons/travel.svg",
     "title": "দর্শনীয় স্থান"
   },
   {
-    "image": "assets/animation/Animation - 1735414154535.json",
+    "image": "assets/icons/hospital.svg",
     "title": "মেডিকেল"
   },
 
   {
-    "image": "assets/animation/Animation - 1735415121738.json",
+    "image": "assets/icons/police.svg",
     "title": "থানা পুলিশ"
   },
   {
-    "image": "assets/animation/Animation - 1735415499187.json",
+    "image": "assets/icons/book.svg",
     "title": "শিক্ষা প্রতিষ্ঠান"
   },
   {
-    "image": "assets/animation/Animation - 1735416580675.json",
+    "image": "assets/icons/fire-truck.svg",
     "title": "ফায়ার সার্ভিস"
   },
   {
-    "image": "assets/animation/Animation - 1735416081007.json",
+    "image": "assets/icons/live-chat.svg",
     "title": "হেল্প লাইন"
   },
   {
-    "image": "assets/animation/Animation - 1735416231947.json",
+    "image": "assets/icons/plane.svg",
     "title": "বিমান টিকেট"
   },
   {
-    "image": "assets/animation/Animation - 1735416352418.json",
+    "image": "assets/icons/ambulance.svg",
     "title": "অ্যাম্বুলেন্স"
   },
 
   {
-    "image": "assets/animation/Animation - 1735416820927.json",
+    "image": "assets/icons/bus-stop.svg",
     "title": "বাস টিকিট"
   },
   {
-    "image": "assets/animation/Animation - 1735417166120.json",
+    "image": "assets/icons/cloudy.svg",
     "title": "আবহাওয়া"
   },
   {
-    "image": "assets/animation/Animation - 1735417375651.json",
+    "image": "assets/icons/restaurant.svg",
     "title": "রেস্টুরেন্ট"
   },
 
   {
-    "image": "assets/animation/Animation - 1735417678528.json",
+    "image": "assets/icons/job-search.svg",
     "title": "চাকরি খুঁজুন"
   },
 
   {
-    "image": "assets/animation/Animation - 1735417862267.json",
+    "image": "assets/icons/train.svg",
     "title": "ট্রেন টিকেট"
   },
 
   {
-    "image": "assets/animation/Animation - 1735417953671.json",
+    "image": "assets/icons/law.svg",
     "title": "আইনজীবী"
   },
   {
-    "image": "assets/animation/Animation - 1735626037992.json",
+    "image": "assets/icons/blood-drop.svg",
     "title": "ব্লাড ডোনার"
   },
   {
-    "image": "assets/animation/Animation - 1735627417352.json",
+    "image": "assets/icons/news-report.svg",
     "title": "নিউজ পত্রিকা"
   }, {
-    "image": "assets/animation/sport- 1735641907196.json",
+    "image": "assets/icons/trophy.svg",
     "title": "খেলাধুলা"
   },
   // {

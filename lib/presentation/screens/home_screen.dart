@@ -1,27 +1,20 @@
 import 'package:clg_final_projects/presentation/screens/blood_doner_screen.dart';
 import 'package:clg_final_projects/presentation/screens/news_paper_home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:lottie/lottie.dart';
-
 import '../model/card_lists.dart';
 import '../model/data_list.dart';
 import '../widgets/slider.dart';
 import '../widgets/web_view_widgets.dart';
 import 'academy_screen.dart';
-import 'air_tricket_screen.dart';
 import 'ambulance_service_screen.dart';
-import 'bar_association_screen.dart';
-import 'bus_tricket_screen.dart';
-import 'jobs_screen.dart';
-import 'resturant_service_screen.dart';
 import 'wather_screen.dart';
 import 'emergency_screen.dart';
 import 'fire_service.dart';
 import 'hospital_screen.dart';
 import 'police_screens.dart';
-import 'train_tricket_screen.dart';
 import 'turist_screen.dart';
 import '../widgets/drawer.dart';
 import '../widgets/notice_board.dart';
@@ -169,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => FireService(),
+                                  builder: (context) => const FireService(),
                                 ),
                               );
                               break;
@@ -182,7 +175,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               );
                               break;
                             case 6:
-                              Get.to(() => const WebViewStack());
+                              Get.to(() => const WebViewScreen(
+                                    title: 'Biman Bangladesh Tricket',
+                                    url:
+                                        'https://www.biman-airlines.com/en/cricket',
+                                  ));
                               break;
                             case 7:
                               Get.to(() => const AmbulanceServiceScreen());
@@ -190,32 +187,57 @@ class _HomeScreenState extends State<HomeScreen> {
 
                             ///Bus Tricet section............
                             case 8:
-                              Get.to(() => const BusTricketScreen());
+                              Get.to(
+                                () => WebViewScreen(
+                                  title: 'বাস টিকিট',
+                                  url: 'https://ticket.jatri.co/bus',
+                                ),
+                              );
                               break;
 
                             ///Weather section............
                             case 9:
-                              Get.to(() => WeatherApp());
+                              Get.to(() => const WeatherApp());
                               break;
 
                             ///Resturent Service section........
                             case 10:
-                              Get.to(() => const RestranServiceScreen());
+                              Get.to(
+                                () => const WebViewScreen(
+                                  title: "রেস্টুরেন্ট",
+                                  url:
+                                      "https://www.foodpanda.com.bd/city/moulvibazar?lng=91.77779&lat=24.48255",
+                                ),
+                              );
                               break;
 
                             /// Job Search Service section........
                             case 11:
-                              Get.to(() => const JobsScreen());
+                              Get.to(
+                                () => const WebViewScreen(
+                                  title: "চাকরি খুঁজুন",
+                                  url:
+                                      "https://jobs.bdjobs.com/bn/jobsearchbn.asp?locationId=38&locationName=Sylhet",
+                                ),
+                              );
                               break;
 
                             /// Train Tricket Service section........
                             case 12:
-                              Get.to(() => const TrainTricketScreen());
+                              Get.to(
+                                () => const WebViewScreen(
+                                  title: "Railway Ticket",
+                                  url: "https://bangladesh-railway.com/",
+                                ),
+                              );
                               break;
 
                             /// judges Service section........
                             case 13:
-                              Get.to(() => const BarAssociationScreen());
+                              Get.to(() => const WebViewScreen(
+                                title: "মৌলভীবাজারের সকল আইনজীবীদের লিস্ট",
+                                url: "https://www.moulvibazarbar.com.bd/home/staff/en",
+                              ),);
                               break;
 
                             /// Blood doner Service section........
@@ -255,15 +277,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 // Optional: Add border radius
-                                child: Lottie.asset(
+                                child: SvgPicture.asset(
                                   cardimageList[index]['image'],
-                                  // Your image URL
-                                  width: 65,
-                                  height: 55,
-                                  // Ensure consistent height
-                                  fit: BoxFit.cover,
-                                  // Adjust as needed
-                                  // Placeholder to show while the image is loading
+                                  height: 50,
+                                  width: 50,
                                 ),
                               ),
                               Text(

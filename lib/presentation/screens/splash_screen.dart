@@ -53,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Lottie.asset(
                 height: 250,
                 width: 250,
-                "assets/animation/Animation - 1735626510638.json"),
+                "assets/animation/loder - 1735626510638.json"),
             const Spacer(),
           ],
         ),

@@ -32,7 +32,7 @@ class ECommerceCardThard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.black12,
               blurRadius: 5,
@@ -55,9 +55,9 @@ class ECommerceCardThard extends StatelessWidget {
                       fit: BoxFit.cover,
                       loadingBuilder: (context, child, loadingProgress) {
                         if (loadingProgress == null) return child;
-                        return Center(child: CircularProgressIndicator());
+                        return const Center(child: CircularProgressIndicator());
                       },
-                      errorBuilder: (context, error, stackTrace) => Icon(
+                      errorBuilder: (context, error, stackTrace) => const Icon(
                         Icons.error,
                         color: Colors.red,
                         size: 80,
@@ -69,7 +69,7 @@ class ECommerceCardThard extends StatelessWidget {
                   top: 0,
                   right: 0,
                   child: IconButton(
-                    icon: CircleAvatar(
+                    icon: const CircleAvatar(
                       backgroundColor: Colors.white,
                       child: Icon(
                         Icons.favorite_border,
@@ -121,7 +121,7 @@ class ECommerceCardThard extends StatelessWidget {
             Row(
               children: [
                 if (rating != null) ...[
-                  Icon(Icons.star, color: Colors.green, size: 16),
+                  const Icon(Icons.star, color: Colors.green, size: 16),
                   Text(
                     rating.toString(),
                     style: const TextStyle(color: Colors.green, fontSize: 12),

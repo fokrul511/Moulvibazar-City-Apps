@@ -44,7 +44,7 @@ class _BarAssociationScreenState extends State<BarAssociationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("মৌলভীবাজারের সকল আইনজীবীদের লিস্ট"),
+        title: const Text("মৌলভীবাজারের সকল আইনজীবীদের লিস্ট"),
       ),
       body: Stack(
         children: [

@@ -8,11 +8,13 @@ import '../model/fire_service_station_list.dart';
 import '../widgets/notice_card.dart';
 
 class FireService extends StatelessWidget {
+  const FireService({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('মৌলভীবাজার সকল ফায়ার স্টেশনের নাম্বার'),
+        title: const Text('মৌলভীবাজার সকল ফায়ার স্টেশনের নাম্বার'),
         backgroundColor: Colors.deepPurple,
       ),
       body: Column(
@@ -20,8 +22,8 @@ class FireService extends StatelessWidget {
           Container(
             width: double.infinity,
             color: Colors.orange,
-            padding: EdgeInsets.symmetric(vertical: 10),
-            child: Text(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: const Text(
               'মৌলভীবাজার জেলা',
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -46,7 +48,7 @@ class FireService extends StatelessWidget {
               },
             ),
           ),
-          NoticeCard(),
+          const NoticeCard(),
         ],
       ),
     );
@@ -58,7 +60,7 @@ class FireStationCard extends StatelessWidget {
   final String location;
   final String phone;
 
-  FireStationCard({
+  const FireStationCard({super.key,
     required this.title,
     required this.location,
     required this.phone,
@@ -67,12 +69,12 @@ class FireStationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Row(
           children: [
             Expanded(
@@ -81,24 +83,24 @@ class FireStationCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
                     ),
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Text(
                     location,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       color: Colors.black54,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     phone,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black87,
                     ),
